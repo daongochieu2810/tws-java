@@ -8,21 +8,21 @@ import javax.swing.SwingUtilities;
 public class Main {
 
     // This method is called to start the application
-    public static void main (String args[]) {
+    public static void main(String args[]) {
         SampleFrame sampleFrame = new SampleFrame();
         sampleFrame.setVisible(true);
     }
 
-    public static void inform( final Component parent, final String str) {
-        if( SwingUtilities.isEventDispatchThread() ) {
-        	showMsg( parent, str, JOptionPane.INFORMATION_MESSAGE);
+    public static void inform(final Component parent, final String str) {
+        if (SwingUtilities.isEventDispatchThread()) {
+            showMsg(parent, str, JOptionPane.INFORMATION_MESSAGE);
         } else {
-            SwingUtilities.invokeLater(() -> showMsg( parent, str, JOptionPane.INFORMATION_MESSAGE));
+            SwingUtilities.invokeLater(() -> showMsg(parent, str, JOptionPane.INFORMATION_MESSAGE));
         }
     }
 
-    private static void showMsg( Component parent, String str, int type) {
+    private static void showMsg(Component parent, String str, int type) {
         // this function pops up a dlg box displaying a message
-        JOptionPane.showMessageDialog( parent, str, "IB Java Test Client", type);
+        JOptionPane.showMessageDialog(parent, str, "IB Java Test Client", type);
     }
 }
